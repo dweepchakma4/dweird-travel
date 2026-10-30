@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Travel &amp; Life</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#ffffff;--bg2:#eaf7ef;--card:#ffffff;--tx:#10231a;--mu:#5f7468;--lime:#9fe2b4;--lav:#2f9e62;--bd:#dcebe1;--sh:0 20px 40px -18px rgba(30,90,60,.25)}
+html{scroll-behavior:smooth}*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1000px 600px at 80% -10%,var(--bg2),var(--bg));color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+.w{max-width:960px;margin:auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+nav b{font-size:22px;letter-spacing:-.5px}nav div a{color:var(--mu);text-decoration:none;margin-left:16px;font-size:14px}
+.lab{display:flex;justify-content:space-between;font-size:11px;color:var(--mu);margin-top:14px;text-transform:uppercase;letter-spacing:1px}.lab b{display:block;color:var(--tx);font-size:12px}
+h1{font-size:clamp(46px,13vw,104px);line-height:.96;letter-spacing:-3px;margin:8px 0 0;font-weight:700;position:relative;z-index:1}
+h1 span{color:var(--lav)}
+.stage{position:relative;height:380px;perspective:900px;margin-top:-30px}
+.scene{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .15s ease-out}
+.blob{position:absolute;left:50%;top:50%;width:230px;height:230px;margin:-115px 0 0 -115px;border-radius:42% 58% 55% 45%/50% 42% 58% 50%;
+background:radial-gradient(circle at 32% 28%,#fff 0 6%,transparent 18%),radial-gradient(circle at 40% 40%,#e9fff0,var(--lime) 40%,#3f9d68 100%);
+box-shadow:inset -22px -26px 40px rgba(10,70,40,.4),inset 14px 14px 30px rgba(255,255,255,.65),0 40px 60px -20px rgba(40,120,70,.45);animation:mo 7s ease-in-out infinite,fl 5s ease-in-out infinite;transform:translateZ(60px)}
+.core{position:absolute;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#a8b0c4 45%,#4a5068);opacity:.9;transform:translateZ(10px);animation:fl 6s ease-in-out infinite reverse;filter:blur(.3px)}
+.ring{position:absolute;left:50%;top:50%;border-radius:50%;border:2px solid var(--lav);transform-style:preserve-3d}
+.r1{width:340px;height:340px;margin:-170px 0 0 -170px;animation:o1 14s linear infinite}
+.r2{width:300px;height:300px;margin:-150px 0 0 -150px;border-color:var(--lime);animation:o2 11s linear infinite}
+@keyframes mo{50%{border-radius:58% 42% 45% 55%/45% 58% 42% 55%}}
+@keyframes fl{50%{translate:0 -14px}}
+@keyframes o1{from{transform:rotateX(72deg) rotateZ(0)}to{transform:rotateX(72deg) rotateZ(360deg)}}
+@keyframes o2{from{transform:rotateY(70deg) rotateZ(0)}to{transform:rotateY(70deg) rotateZ(-360deg)}}
+.stat{position:absolute;left:0;bottom:30px;font-size:13px;color:var(--mu);z-index:2}.stat b{display:block;font-size:26px;color:var(--tx)}
+.go{position:absolute;right:0;bottom:20px;width:96px;height:96px;border-radius:50%;background:var(--lime);color:#0f1115;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:700;text-decoration:none;box-shadow:var(--sh);z-index:2}
+.lead{max-width:480px;color:var(--mu);font-size:18px;margin:10px 0 0}
+section{padding:46px 0}
+h2{font-size:clamp(30px,7vw,46px);letter-spacing:-1.5px;margin:0 0 6px;line-height:1.05}.sub{color:var(--mu);margin:0 0 24px}
+.g{display:grid;gap:16px;perspective:1000px}@media(min-width:640px){.g{grid-template-columns:1fr 1fr}}
+.t{background:var(--card);border:1px solid var(--bd);border-radius:24px;padding:22px;box-shadow:var(--sh);transform-style:preserve-3d;transition:transform .2s ease-out;will-change:transform}
+.t h3{margin:0 0 4px;font-size:21px;letter-spacing:-.5px}.t p{margin:0;color:var(--mu);font-size:15px}
+.k{display:inline-block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;background:var(--lime);color:#0f1115;border-radius:99px;padding:3px 12px;margin-bottom:12px}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:14px;perspective:1000px}@media(min-width:640px){.pg{grid-template-columns:repeat(3,1fr)}}
+.ph{aspect-ratio:4/5;border-radius:26px;display:flex;align-items:flex-end;padding:14px;color:#fff;font-weight:700;box-shadow:var(--sh);transition:transform .2s ease-out;will-change:transform}
+.ph small{display:block;font-weight:400;opacity:.85;font-size:12px}
+.pg .ph:nth-child(odd){transform:rotate(-2deg)}.pg .ph:nth-child(even){transform:rotate(2deg) translateY(14px)}
+.q{font-size:clamp(22px,5.5vw,34px);line-height:1.25;letter-spacing:-.8px;font-weight:600;max-width:680px}.q span{color:var(--lav)}
+.btn{display:inline-block;padding:14px 26px;border-radius:99px;background:var(--tx);color:var(--bg);text-decoration:none;font-weight:600}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:0 0 14px}.chip{flex:none;padding:8px 16px;border-radius:99px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;font-size:14px;cursor:pointer}.chip.on{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+.fg{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:12px}
+.f{position:relative;background:var(--card);border:2px solid var(--bd);border-radius:20px;padding:14px 6px 10px;text-align:center;cursor:pointer;color:var(--tx);font:inherit;font-size:12px;box-shadow:var(--sh);transition:transform .15s}.f:active{transform:scale(.96)}.f i{display:block;font-style:normal;font-size:38px;line-height:1.1;margin-bottom:4px}.f.on{border-color:var(--lime)}.f u{position:absolute;top:6px;right:8px;text-decoration:none;font-size:12px}
+.dt{margin-top:18px;background:var(--card);border:1px solid var(--bd);border-radius:24px;padding:22px;box-shadow:var(--sh)}.dt .bf{font-size:56px;line-height:1}.dt h3{margin:6px 0 2px;font-size:24px;letter-spacing:-.5px}.dt p{margin:0 0 6px;color:var(--mu)}
+.ab{display:inline-block;margin:8px 8px 0 0;padding:10px 18px;border-radius:99px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit;font-size:14px;cursor:pointer}.ab.on{background:var(--lime);color:#0f1115;border-color:var(--lime);font-weight:700}
+.up{background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:18px;margin-bottom:18px;box-shadow:var(--sh)}
+.up input,.up textarea{width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit;margin:4px 0}.up input[type=file]{border:0;padding:6px 0}
+.rw{display:flex;gap:10px;margin:8px 0}.rw img{width:78px;height:78px;object-fit:cover;border-radius:12px;flex:none}.rw div{flex:1}
+.pc{border-radius:22px;overflow:hidden;background:var(--card);border:1px solid var(--bd);box-shadow:var(--sh)}.pc img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}.pc>div{padding:12px 14px 14px}.pc b{font-size:16px}.pc p{margin:4px 0;color:var(--mu);font-size:14px;line-height:1.45}.pc small{color:var(--mu);font-size:12px}
+footer{padding:30px 0 50px;color:var(--mu);font-size:14px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head><body>
+<div class="w">
+<nav><b>Dweep.</b><div><a href="#journeys">Journeys</a><a href="#moments">Moments</a><a href="#countries">Countries</a><a href="#contact">Contact</a></div></nav>
+<div class="lab"><div>Project<b>Travel &amp; Life</b></div><div>Type<b>Personal site</b></div><div>Nickname<b id="nk">—</b></div></div>
+<h1>Explore far.<br><span>Live</span> fully.</h1>
+<div class="stage" id="st"><div class="scene" id="sc"><div class="ring r1"></div><div class="core"></div><div class="blob"></div><div class="ring r2"></div></div>
+<div class="stat"><b>12+</b>places explored</div><a class="go" href="#journeys">Start<br>journey</a></div>
+<p class="lead">My corner of the internet for places I wander, moments I love and the little things that make life feel good.</p>
+
+<section id="journeys"><h2>Journeys</h2><p class="sub">The kind of places that stay with me.</p>
+<div class="g">
+<div class="t"><span class="k">/01 Hills</span><h3>Mountain mornings</h3><p>Cold air, slow roads and views that make you go quiet.</p></div>
+<div class="t"><span class="k">/02 Green</span><h3>Tea gardens</h3><p>Endless green rows, fresh air and a hot cup of tea.</p></div>
+<div class="t"><span class="k">/03 Water</span><h3>Rivers &amp; forests</h3><p>Boat rides, still water and the sound of nature.</p></div>
+<div class="t"><span class="k">/04 City</span><h3>Streets after dark</h3><p>Street food, lights and stories from strangers.</p></div>
+</div></section>
+
+<section id="moments"><h2>Travel moments</h2><p class="sub">Photos from the road.</p>
+<div class="up" id="up" hidden><b>Add travel photos</b>
+<p class="sub" style="margin:4px 0 10px">Only you (the owner) see this panel. Choose photos, then type a place and a note for each one.</p>
+<input type="file" id="pf" accept="image/*" multiple>
+<div id="pl"></div>
+<button class="ab on" id="ub">Upload photos</button> <span id="us" class="sub"></span>
+<hr style="border:0;border-top:1px solid var(--bd);margin:14px 0">
+<b>Nickname</b><div style="display:flex;gap:8px;margin-top:6px"><input id="nin" placeholder="Your nickname"><button class="ab" id="nsv" style="margin:0">Save</button></div></div>
+<div class="pg" id="pg"></div></section>
+
+<section id="countries"><h2>Explore countries</h2><p class="sub">Tap a flag to see details, then mark it as visited or add it to your wishlist.</p>
+<div class="chips" id="rc"></div><div class="fg" id="fg"></div><div class="dt" id="dt"></div></section>
+
+<section><h2>Life, enjoyed</h2>
+<p class="q">“Not every day needs to be big. Some of the best ones are just <span>good company</span>, good music and nowhere to be.”</p></section>
+
+<section id="contact"><h2>Say hello</h2><p class="sub">Travel tips, a place I should visit, or just a hello.</p>
+<a class="btn" href="mailto:dweepckm7@gmail.com">dweepckm7@gmail.com</a></section>
+<footer>© <span id="y"></span> Dweep. Wander more.</footer>
+</div>
+<script>
+document.getElementById("y").textContent=new Date().getFullYear();
+var st=document.getElementById("st"),sc=document.getElementById("sc");
+st.addEventListener("pointermove",function(e){var r=st.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;sc.style.transform="rotateY("+x*30+"deg) rotateX("+-y*30+"deg)"});
+st.addEventListener("pointerleave",function(){sc.style.transform=""});
+document.querySelectorAll(".t").forEach(function(c){
+c.addEventListener("pointermove",function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+x*12+"deg) rotateX("+-y*12+"deg) translateZ(8px)"});
+c.addEventListener("pointerleave",function(){c.style.transform=""})});
+var C=[["🇧🇩","Bangladesh","Dhaka","Asia","Tea gardens, the Sundarbans and the longest natural sea beach at Cox’s Bazar."],["🇮🇳","India","New Delhi","Asia","Mountains, deserts, backwaters and incredibly diverse food."],["🇳🇵","Nepal","Kathmandu","Asia","Home to Mount Everest and the Himalayan trekking trails."],["🇧🇹","Bhutan","Thimphu","Asia","A Himalayan kingdom known for monasteries and valleys."],["🇲🇻","Maldives","Malé","Asia","Coral islands with crystal-clear lagoons."],["🇱🇰","Sri Lanka","Sri Jayawardenepura Kotte","Asia","Tea hills, beaches and ancient temples on one island."],["🇹🇭","Thailand","Bangkok","Asia","Island beaches, street food and golden temples."],["🇲🇾","Malaysia","Kuala Lumpur","Asia","Rainforests, islands and the Petronas Towers."],["🇸🇬","Singapore","Singapore","Asia","A green, futuristic city-state with amazing food."],["🇯🇵","Japan","Tokyo","Asia","Cherry blossoms, bullet trains and old temples beside neon cities."],["🇦🇪","UAE","Abu Dhabi","Asia","Desert dunes and record-breaking skylines like Dubai."],["🇹🇷","Türkiye","Ankara","Asia","Where Europe meets Asia: Istanbul, Cappadocia and the coast."],["🇫🇷","France","Paris","Europe","Paris, the Alps and the Riviera."],["🇮🇹","Italy","Rome","Europe","Rome, Venice, coastlines and some of the world’s best food."],["🇨🇭","Switzerland","Bern","Europe","Alpine peaks, lakes and scenic train rides."],["🇬🇧","United Kingdom","London","Europe","London, historic castles and green countryside."],["🇪🇬","Egypt","Cairo","Africa","The pyramids of Giza and the River Nile."],["🇰🇪","Kenya","Nairobi","Africa","Safari in the Maasai Mara and the great migration."],["🇺🇸","United States","Washington, D.C.","Americas","National parks, big cities and epic road trips."],["🇨🇦","Canada","Ottawa","Americas","The Rockies, lakes and northern lights."],["🇧🇷","Brazil","Brasília","Americas","The Amazon rainforest, Rio and carnival."],["🇦🇺","Australia","Canberra","Oceania","The Great Barrier Reef, the outback and coastal cities."]];
+var RG=["All","Asia","Europe","Africa","Americas","Oceania"],cr="All",cs=0,D={};
+try{D=JSON.parse(localStorage.getItem("dwc")||"{}")}catch(e){D={}}
+function svc(){try{localStorage.setItem("dwc",JSON.stringify(D))}catch(e){}}
+function rc(){
+document.getElementById("rc").innerHTML=RG.map(function(r){return '<button class="chip'+(r==cr?' on':'')+'" data-r="'+r+'">'+r+'</button>'}).join("");
+document.getElementById("fg").innerHTML=C.map(function(c,i){if(cr!="All"&&c[3]!=cr)return"";var s=D[c[1]]||{};return '<button class="f'+(i==cs?' on':'')+'" data-i="'+i+'"><i>'+c[0]+'</i>'+c[1]+'<u>'+(s.v?"✅":s.w?"💛":"")+'</u></button>'}).join("");
+var c=C[cs],s=D[c[1]]||{};
+document.getElementById("dt").innerHTML='<div class="bf">'+c[0]+'</div><h3>'+c[1]+'</h3><p>Capital: '+c[2]+' · '+c[3]+'</p><p>'+c[4]+'</p><button class="ab'+(s.v?' on':'')+'" data-a="v">'+(s.v?'✓ Visited':'Mark as visited')+'</button><button class="ab'+(s.w?' on':'')+'" data-a="w">'+(s.w?'♥ In wishlist':'♡ Want to visit')+'</button>'}
+document.getElementById("countries").addEventListener("click",function(e){var t=e.target.closest("button");if(!t)return;
+if(t.dataset.r)cr=t.dataset.r;else if(t.dataset.i)cs=+t.dataset.i;else if(t.dataset.a){var n=C[cs][1];D[n]=D[n]||{};D[n][t.dataset.a]=!D[n][t.dataset.a];svc()}rc()});
+rc();
+var PG=document.getElementById("pg"),UP=document.getElementById("up"),dbx=null,asx=null,items=[],canE=false,nick="",sel=[];
+function esc(t){return String(t||"").replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function showP(){PG.innerHTML=items.length?items.map(function(p){return '<div class="pc"><img src="'+esc(p.url)+'" alt="'+esc(p.place)+'" loading="lazy"><div><b>'+esc(p.place||"Untitled")+'</b><p>'+esc(p.note)+'</p>'+(p.by?'<small>by '+esc(p.by)+'</small>':'')+(canE?'<br><button class="ab" data-del="'+esc(p.id)+'">Delete</button>':'')+'</div></div>'}).join(""):'<p class="sub">Travel photos will appear here.</p>'}
+function rs(f){return new Promise(function(res,rej){var im=new Image(),u=URL.createObjectURL(f);im.onload=function(){var s=Math.min(1,1200/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext("2d").drawImage(im,0,0,c.width,c.height);c.toBlob(function(b){URL.revokeObjectURL(u);b?res(b):rej()},"image/jpeg",.82)};im.onerror=rej;im.src=u})}
+function setNick(v){nick=v||"";document.getElementById("nk").textContent=nick||"\u2014";var i=document.getElementById("nin");if(i&&!i.value)i.value=nick}
+document.getElementById("pf").addEventListener("change",function(){sel=Array.prototype.slice.call(this.files);document.getElementById("pl").innerHTML=sel.map(function(f){return '<div class="rw"><img src="'+URL.createObjectURL(f)+'" alt=""><div><input placeholder="Place (e.g. Ratargul)"><textarea rows="2" placeholder="Write a note about this photo"></textarea></div></div>'}).join("")});
+document.getElementById("ub").addEventListener("click",async function(){var st=document.getElementById("us"),rows=document.querySelectorAll("#pl .rw");if(!sel.length){st.textContent="Choose photos first.";return}
+this.disabled=true;try{for(var i=0;i<sel.length;i++){st.textContent="Uploading "+(i+1)+" of "+sel.length+"\u2026";var b=await rs(sel[i]),r=await asx.upload(b);
+await dbx.collection("photos").add({url:r.url,assetId:r.id,place:rows[i].querySelector("input").value,note:rows[i].querySelector("textarea").value,by:nick,ts:Date.now()+i})}
+st.textContent="Done!";sel=[];document.getElementById("pl").innerHTML="";document.getElementById("pf").value=""}catch(e){st.textContent="Upload failed. Try again with fewer photos."}this.disabled=false});
+document.getElementById("nsv").addEventListener("click",async function(){var v=document.getElementById("nin").value.trim();try{await dbx.doc("site/profile").set({nickname:v});setNick(v)}catch(e){}});
+document.addEventListener("click",async function(e){var t=e.target.closest("[data-del]");if(!t)return;if(t.dataset.ok!=="1"){t.dataset.ok="1";t.textContent="Tap again to delete";return}
+var it=items.filter(function(x){return x.id===t.dataset.del})[0];try{await dbx.collection("photos").doc(t.dataset.del).delete();if(it&&it.assetId&&asx)await asx.delete(it.assetId)}catch(x){}});
+(async function(){showP();if(!window.claude)return;
+try{var u=await claude.use("user");canE=u?await u.canEdit():false}catch(e){}
+try{dbx=await claude.use("db")}catch(e){}try{asx=await claude.use("assets")}catch(e){}
+if(canE&&dbx&&asx)UP.hidden=false;
+if(dbx){dbx.collection("photos").onSnapshot(function(q){items=q.docs.map(function(d){var x=d.data();x.id=d.id;return x}).sort(function(a,b){return(b.ts||0)-(a.ts||0)});showP()},function(){});
+dbx.doc("site/profile").onSnapshot(function(d){if(d.exists&&d.data())setNick(d.data().nickname)},function(){})}})();
+</script>
+</body></html>
